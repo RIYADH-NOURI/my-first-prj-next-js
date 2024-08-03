@@ -1,7 +1,7 @@
 // pages/country/[cca3].js
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
-import Header from '/pages/Header.js';  // تأكد من أن المسار صحيح
+import Header from '/pages/Header.js';  
 import style from '/styles/Displaydata.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
