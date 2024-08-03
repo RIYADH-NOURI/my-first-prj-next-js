@@ -3,7 +3,6 @@ import Link from 'next/link';
 import style from '/styles/style.module.css';
 
 const DisplayData = ({ data }) => {
-  // تحقق من وجود البيانات وتأكد من أنها مصفوفة
   if (!data || !Array.isArray(data)) {
     return <p>No data available</p>;
   }
