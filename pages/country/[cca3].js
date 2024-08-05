@@ -34,11 +34,13 @@ const CountryDetails = ({ country }) => {
   return (
     <>
       <Header />
+      <Link className={style.back_link} href="/">
       <div className={style.back_container}>
-        <Link className={style.back_link} href="/">
+       
           <i className={`fa-solid fa-arrow-left ${style.icon}`}></i> Back
-        </Link>
       </div>
+      </Link>
+
       <div className={style.container}>
         <div className={style.image_container}>
           <Image

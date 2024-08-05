@@ -28,7 +28,7 @@ export default function Home({ data }) {
 
   const filteredData = data.filter((country) => {
     return (
-      country.name.common.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      country.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
       (region ? country.region === region : true)
     );
   });
@@ -47,9 +47,19 @@ export async function getStaticProps() {
   try {
     const res = await fetch('https://restcountries.com/v3.1/all');
     const data = await res.json();
+    const filterdataapi = data.map((country) => {
+      return {
+        name: country.name.common,
+        capital: country.capital ? country.capital[0] : 'N/A',
+        region: country.region,
+        population: country.population,
+        flags: country.flags.png,
+        cca3: country.cca3,
+      };
+    })
     return {
       props: {
-        data,
+        data: filterdataapi,
       },
     };
   } catch (error) {
